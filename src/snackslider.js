@@ -10,8 +10,8 @@ class SnackSlider{
             speed: 1000,
             pause: 4000,
             fit: 'cover',
-            width: 'full',
-            height: 'full',
+            width: 0,
+            height: 0,
             background: 'black',
             children: [],
         };
@@ -115,9 +115,8 @@ class SnackSlider{
     }
 
     get width(){
-        if(this._width === 'full'){
-            if(this.wrapper) this.wrapper.width();
-            else return 0;
+        if(this._width === 0){
+            return this.wrapper.width();
         }
         return this._width;
     }
@@ -128,9 +127,8 @@ class SnackSlider{
     }
 
     get height(){
-        if(this._height === 'full'){
-            if(this.wrapper) this.wrapper.height();
-            else return 0;
+        if(this._height === 0){
+            return this.wrapper.height();
         }
         return this._height;
     }
@@ -267,9 +265,13 @@ class SnackSlider{
         this.worker = setInterval(this.play, this.speed + this.pause);
     }
 
-    destroy(){
+    distroy(){
         clearInterval(this.worker);
         this.killTranslation(0);
         this.killTranslation(1);
+    }
+
+    stop(){
+        this.distroy();
     }
 }

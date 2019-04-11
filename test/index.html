@@ -19,8 +19,8 @@
                 mode: 'right',
                 speed: 2000,
                 pause: 3000,
-                width: 320,
-                height: 240,
+                width: 0,
+                height: 0,
                 fit: 'cover',
                 children: [
                     './rainbow.jpg',
@@ -28,7 +28,6 @@
                     './spiral-staircase.jpg',
                 ]
             });
-            slider.start();
         });
     </script>
 
@@ -56,5 +55,8 @@
     <button onClick="slider.height=480">h480</button><br/>
     <button onClick="slider.delete(1)">remove rio image</button>
     <button onClick="slider.insert(1, './rio.jpg')">insert rio image</button>
+    <button onClick="slider.play()">Next</button>
+    <button onClick="slider.start()">Start</button>
+    <button onClick="slider.stop()">Stop</button>
 </body>
 </html>
