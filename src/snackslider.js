@@ -1,5 +1,10 @@
-/*
-
+/**
+ * @overview Simple image slider Class
+ * last modified : 2019.04.11
+ * @author Seungho.Yi <rh22sh@gmail.com>
+ * @package SnackSlider
+ * @license MIT
+ * @see https://github.com/rheesh/SnackSlider
  */
 
 class SnackSlider{
