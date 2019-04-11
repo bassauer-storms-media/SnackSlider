@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+    <link href="../src/snackslider.css" rel="stylesheet" />
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../src/snackslider.js"></script>
+
+    <script>
+        let slider;
+        $(document).ready(function () {
+            slider = new SnackSlider({
+                selector: '.slider',
+                mode: 'right',
+                speed: 2000,
+                pause: 3000,
+                width: 320,
+                height: 240,
+                fit: 'cover',
+                children: [
+                    './rainbow.jpg',
+                    './rio.jpg',
+                    './spiral-staircase.jpg',
+                ]
+            });
+            slider.start();
+        });
+    </script>
+
+
+</head>
+<body>
+    <h1>Snack Slider Test</h1>
+    <div class="slider" style="width:640px;height:480px"></div>
+    <button onClick="slider.mode='left'">left</button>
+    <button onClick="slider.mode='right'">right</button>
+    <button onClick="slider.mode='top'">top</button>
+    <button onClick="slider.mode='bottom'">bottom</button>
+    <button onClick="slider.mode='fade'">fade</button><br/>
+    <button onClick="slider.speed=500">speed 0.5s</button>
+    <button onClick="slider.speed=1000">speed 1s</button>
+    <button onClick="slider.speed=2000">speed 2s</button>
+    <button onClick="slider.pause=3000">pause 3s</button>
+    <button onClick="slider.pause=6000">pause 6s</button><br/>
+    <button onClick="slider.fit='cover'">cover</button>
+    <button onClick="slider.fit='contain'">contain</button>
+    <button onClick="slider.fit='fill'">fill</button><br/>
+    <button onClick="slider.width=320">w320</button>
+    <button onClick="slider.height=240">h240</button>
+    <button onClick="slider.width=640">w640</button>
+    <button onClick="slider.height=480">h480</button><br/>
+    <button onClick="slider.delete(1)">remove rio image</button>
+    <button onClick="slider.insert(1, './rio.jpg')">insert rio image</button>
+</body>
+</html>
